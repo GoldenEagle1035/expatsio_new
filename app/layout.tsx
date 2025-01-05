@@ -47,8 +47,6 @@ export default function RootLayout({
             draggable
             pauseOnHover
             theme="colored"
-            bodyClassName={inter.className}
-            toastClassName={inter.className}
           />
           {children}
         </Providers>
