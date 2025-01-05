@@ -5,6 +5,11 @@ import React from "react";
 import { PreloadResources } from "@/app/preload-resources";
 import Head from "next/head";
 
+import "@rainbow-me/rainbowkit/styles.css";
+import Providers from "./providers";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -29,7 +34,23 @@ export default function RootLayout({
         <link rel="icon" href="https://tuk-cdn.s3.amazonaws.com/can-uploader/favicon_-_.png" />
       </Head> */}
       <PreloadResources />
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Providers>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }

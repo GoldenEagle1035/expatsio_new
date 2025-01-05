@@ -10,6 +10,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.2.1",
     "@google/model-viewer": "^1.12.1",
     "@react-hook/window-size": "^3.1.1",
     "@react-hooks-hub/use-media-query": "^1.1.7",
@@ -34,6 +35,7 @@
     "react-icons": "^5.2.1",
     "react-indiana-drag-scroll": "^2.2.0",
     "react-player": "^2.16.0",
+    "react-toastify": "^11.0.2",
     "react-twitter-widgets": "^1.11.0",
     "react-use": "^17.5.0",
     "react-use-audio-player": "^2.2.0",
@@ -42,6 +44,8 @@
     "server": "^1.0.39",
     "sharp": "^0.33.3",
     "swiper": "^11.1.14",
+    "viem": "2.x",
+    "wagmi": "^2.14.4",
     "worker-timers": "^7.1.7",
     "zustand": "^4.5.2"
   },
