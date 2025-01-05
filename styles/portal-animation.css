@@ -1,0 +1,22 @@
+.spin-portal-animation {
+
+  animation: spin 400ms ease-in-out infinite alternate;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+[data-nextjs-toast-wrapper] {
+  display: none !important;
+  opacity: 0!important;
+}
+.nextjs-toast-errors-parent {
+  display: none !important;
+  opacity: 0!important;
+}

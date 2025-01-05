@@ -1,0 +1,302 @@
+.wrap-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.wrap-container {
+  background: #000;
+  text-align: center;
+}
+
+.wrap-container::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.scene {
+  display: inline-block;
+  vertical-align: middle;
+  perspective: 5px;
+  perspective-origin: 50% 50%;
+  position: relative;
+}
+
+.wrap {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  top: -500px;
+  transform-style: preserve-3d;
+  animation: move 12s infinite linear;
+  animation-fill-mode: forwards;
+
+}
+
+.wrap:nth-child(2) {
+  animation: move 12s infinite linear;
+  animation-delay: 6s;
+}
+
+.wall {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  animation: fade 12s infinite linear;
+  animation-delay: 0s;
+}
+
+.wrap:nth-child(2) .wall {
+  animation-delay: 6s;
+}
+
+.wall-right {
+  transform: rotateY(90deg) translateZ(500px);
+}
+
+.wall-left {
+  transform: rotateY(-90deg) translateZ(500px);
+}
+
+.wall-top {
+  transform: rotateX(90deg) translateZ(500px);
+}
+
+.wall-bottom {
+  transform: rotateX(-90deg) translateZ(500px);
+}
+
+.wall-back {
+  transform: rotateX(180deg) translateZ(500px);
+}
+
+@keyframes move {
+  0% {
+    transform: translateZ(-500px) rotate(0deg);
+  }
+  100% {
+    transform: translateZ(500px) rotate(0deg);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.light-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.light {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  filter: blur(24px);
+  border-radius: 50%;
+  animation: light 12s infinite linear;
+  z-index: 50;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.light-inside {
+  border-radius: 100%;
+  filter: blur(5px);
+  width: 50px;
+  height: 50px;
+  z-index: 50;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  background: #fff;
+}
+
+
+.ship-shaking-animation {
+  /* Add your existing properties here */
+
+  /* Now add the animation properties */
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.planet-hologram-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: inline;
+  scroll-snap-align: center;
+  -webkit-mask-image: linear-gradient(90deg, transparent 5%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 60%, transparent 90%);
+}
+
+.planet-hologram-container img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.planet-hologram-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.ship-floating-animation {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-18px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.scaling-planet-animation {
+  animation: scalingPlanet 150s ease-in-out infinite;
+}
+
+@keyframes scalingPlanet {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.5);
+  }
+  66% {
+    transform: scale(1);
+  }
+  99% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.scaling-object-animation {
+  animation: scalingObject 100s ease-in-out infinite;
+}
+
+@keyframes scalingObject {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(10);
+  }
+}
+
+
+.warning-animation {
+  animation: warningAnimation 1s infinite linear;
+}
+
+@keyframes warningAnimation {
+  0% {
+    background: rgba(255, 0, 0, 0);
+  }
+  50% {
+    background: rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    background: rgba(255, 0, 0, 0);
+  }
+}
+
+.flash {
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  animation: flash 0s 5s  ease-in-out forwards;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+[data-nextjs-toast-wrapper] {
+  display: none !important;
+  opacity: 0!important;
+}
+.nextjs-toast-errors-parent {
+  display: none !important;
+  opacity: 0!important;
+}
