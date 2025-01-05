@@ -219,7 +219,7 @@ function page() {
           </div> */}
           <div className="absolute left-[12%] 2xl:top-[110px] top-[60px] z-40 top130">
             <Image
-              src="./animation.gif"
+              src="https://expatsio.b-cdn.net/mint.png"
               fill={true}
               decoding="sync"
               loading="eager"
@@ -235,7 +235,7 @@ function page() {
                 </h2>
                 <div className="2xl:mt-4 lg:mt-2 mt-1 mb-2 shadow rounded-2xl border-2 px-4 2xl:py-2 py-[1px] flex justify-between gap-4 items-center bg-[#fbdccb] border-black relative z-10">
                   <Image
-                    src="https://expatsio.b-cdn.net/mb.png"
+                    src="./animation.gif"
                     fill={true}
                     decoding="sync"
                     loading="eager"
