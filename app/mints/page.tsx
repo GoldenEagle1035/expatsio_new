@@ -67,16 +67,13 @@ function page() {
 
   const onMint = async () => {
     console.log("onMint");
-    const toastId = toast.loading("Processing mint...");
-
-    if (!isConnected) {
-      toast.done(toastId);
+    
+    if (!isConnected || !chain) {
       toast.update("Connect Wallet First!");
+      return;
     }
-    if (!chain) {
-      toast.done(toastId);
-      toast.error("Switch Network First!");
-    }
+    
+    const toastId = toast.loading("Processing mint...");
 
     const canMint: any = await readCanMint(address as string);
     console.log("canMint", canMint);
