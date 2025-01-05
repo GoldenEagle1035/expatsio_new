@@ -219,7 +219,7 @@ function page() {
           </div> */}
           <div className="absolute left-[12%] 2xl:top-[110px] top-[60px] z-40 top130">
             <Image
-              src="https://expatsio.b-cdn.net/mint.png"
+              src="./animation.gif"
               fill={true}
               decoding="sync"
               loading="eager"
