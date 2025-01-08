@@ -41,8 +41,8 @@ const Armory: React.FC<ArmoryProps> = ({ isLandingButtonClicked }) => {
             ref={videoRef}
             autoPlay
             muted={isMobile} // Mute on mobile
-            className={`!relative lg:rounded-[100px] rounded-[50px] 2xl:w-[82%] lg:w-[83%] w-[90%] lg:h-[68vh] h-[60vh] h100 2xl:mt-[2vh] lg:mt-[1vh] mt-[-15px] object-fill mx-auto`}
-            src="https://expatsio.b-cdn.net/sam.mp4"
+            className={`w-screen h-screen object-cover`}
+            src="https://expatsio-nft.b-cdn.net/intro.mp4"
             preload="auto"
           />
           {/* Skip Button */}
