@@ -34,19 +34,17 @@ const Armory: React.FC<ArmoryProps> = ({ isLandingButtonClicked }) => {
   return (
     <>
       <section className="bg-[url(https://expatsio.b-cdn.net/e_3.png)] herobgpositions w-screen h-screen relative">
-        <div className="my-auto pt-20 w-full relative z-10 pr-24 pl-16 px0 h-screen f-lex">
-          {/* Video Player */}
-          <div className="relative">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted={isMobile} // Mute on mobile
-            className={`w-screen h-screen object-cover`}
-            src="https://expatsio-nft.b-cdn.net/intro.mp4"
-            preload="auto"
-          />
+        <video
+          ref={videoRef}
+          autoPlay
+          muted={isMobile} // Mute on mobile
+          className={`w-screen h-screen object-cover`}
+          src="https://expatsio-nft.b-cdn.net/intro.mp4"
+          preload="auto"
+        />
+        <div className="absolute my-auto pt-20 w-full relative z-10 pr-24 pl-16 px0 h-screen f-lex">
           {/* Skip Button */}
-          <div className="absolute bottom-[1%] lg:bottom-[5%] my-auto lg:right-[10%] right-[-20px] z-50 !w-[160px] !h-16">
+          <div className="bottom-[1%] lg:bottom-[5%] my-auto lg:right-[10%] right-[-20px] z-50 !w-[160px] !h-16">
             <Image
               onClick={() => goToPage(PagesEnum.COCKPIT)}
               aria-label="Simple"
@@ -57,7 +55,6 @@ const Armory: React.FC<ArmoryProps> = ({ isLandingButtonClicked }) => {
               className={`lg:!w-[160px] !w-[80px] !h-16 rounded-full cursor-pointer`}
               alt="Video"
             />
-          </div>
           </div>
         </div>
       </section>
