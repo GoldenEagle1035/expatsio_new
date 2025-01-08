@@ -34,32 +34,34 @@ const Armory: React.FC<ArmoryProps> = ({ isLandingButtonClicked }) => {
   return (
     <>
       <section className="bg-[url(https://expatsio.b-cdn.net/e_3.png)] herobgpositions w-screen h-screen relative">
-        <div className="absolute my-auto pt-20 w-full relative z-10 pr-24 pl-16 px0 h-screen f-lex">
-          <div
-            className={`!relative lg:rounded-[100px] rounded-[50px] 2xl:w-[82%] lg:w-[83%] w-[90%] lg:h-[68vh] h-[60vh] h100 2xl:mt-[2vh] lg:mt-[1vh] mt-[-15px] object-fill mx-auto`}
-          />
-          {/* Skip Button */}
-          <div className="absolute bottom-[1%] lg:bottom-[5%] my-auto lg:right-[10%] right-[-20px] z-50 !w-[160px] !h-16">
-            <Image
-              onClick={() => goToPage(PagesEnum.COCKPIT)}
-              aria-label="Simple"
-              src={"https://expatsio.b-cdn.net/skip.svg"}
-              fill={true}
-              decoding="sync"
-              loading="eager"
-              className={`lg:!w-[160px] !w-[80px] !h-16 rounded-full cursor-pointer`}
-              alt="Video"
-            />
-          </div>
-        </div>
         <video
           ref={videoRef}
           autoPlay
           muted={isMobile} // Mute on mobile
-          className={`w-screen h-screen object-cover`}
+          className={`absolute w-screen h-screen object-cover`}
           src="https://expatsio-nft.b-cdn.net/intro.mp4"
           preload="auto"
         />
+        <div className="absolute my-auto pt-20 w-full relative z-10 pr-24 pl-16 px0 h-screen f-lex">
+          <div className="relative">
+            <div
+              className={`!relative lg:rounded-[100px] rounded-[50px] 2xl:w-[82%] lg:w-[83%] w-[90%] lg:h-[68vh] h-[60vh] h100 2xl:mt-[2vh] lg:mt-[1vh] mt-[-15px] object-fill mx-auto`}
+            />
+            {/* Skip Button */}
+            <div className="absolute bottom-[1%] lg:bottom-[5%] my-auto lg:right-[10%] right-[-20px] z-50 !w-[160px] !h-16">
+              <Image
+                onClick={() => goToPage(PagesEnum.COCKPIT)}
+                aria-label="Simple"
+                src={"https://expatsio.b-cdn.net/skip.svg"}
+                fill={true}
+                decoding="sync"
+                loading="eager"
+                className={`lg:!w-[160px] !w-[80px] !h-16 rounded-full cursor-pointer`}
+                alt="Video"
+              />
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );
