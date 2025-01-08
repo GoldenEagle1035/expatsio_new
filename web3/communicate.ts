@@ -1,11 +1,11 @@
 import { readContract, writeContract, waitForTransactionReceipt } from '@wagmi/core'
 import abi from './abis/ExpatsioNFT.json'
-import { config } from "@/lib/config"
+import { wagmiAdapter } from "@/lib/config"
 import { collectionAddress } from "./config"
 
 export const waitTransactionConfirm = async (tx: `0x${string}`) => {
     try {
-        const result = await waitForTransactionReceipt(config, { hash: tx });
+        const result = await waitForTransactionReceipt(wagmiAdapter.wagmiConfig, { hash: tx });
         return result;
     } catch (error) {
         return { error }
@@ -14,7 +14,7 @@ export const waitTransactionConfirm = async (tx: `0x${string}`) => {
 
 export const readWhitelistStage = async () => {
     try {
-        const result = await readContract(config, {
+        const result = await readContract(wagmiAdapter.wagmiConfig, {
             abi,
             address: collectionAddress,
             functionName: 'whitelistActive',

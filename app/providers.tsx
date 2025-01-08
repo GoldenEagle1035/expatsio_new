@@ -2,7 +2,7 @@
 
 import { WagmiConfig } from 'wagmi'
 import { QueryClientProvider } from '@tanstack/react-query'
-import { wagmiAdapter } from "@/lib/config";
+import { wagmiAdapter, queryClient } from "@/lib/config";
 
 type Props = {
     children: React.ReactNode;

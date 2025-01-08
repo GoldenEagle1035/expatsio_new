@@ -8,7 +8,7 @@ import { QueryClient } from '@tanstack/react-query'
 
 const projectId = "97b2da2ba373a81bf789edbfc4d7bb18";
 
-const queryClient = new QueryClient()
+export const queryClient = new QueryClient()
 
 const metadata = {
    name: 'Expatsio',
