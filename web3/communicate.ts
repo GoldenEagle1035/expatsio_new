@@ -27,7 +27,7 @@ export const readWhitelistStage = async () => {
 
 export const readCanMint = async (minter: string) => {
     try {
-        const result = await readContract(config, {
+        const result = await readContract(wagmiAdapter.wagmiConfig, {
             abi,
             address: collectionAddress,
             functionName: 'canMint',
@@ -42,7 +42,7 @@ export const readCanMint = async (minter: string) => {
 export const executeMint = async (value: bigint) => {
     try {
         console.log("executeMint", value);
-        const result = await writeContract(config, {
+        const result = await writeContract(wagmiAdapter.wagmiConfig, {
             abi,
             address: collectionAddress,
             functionName: 'mint',
@@ -60,7 +60,7 @@ export const executeMint = async (value: bigint) => {
 export const executeBatchMint = async (mintCount: number, value: bigint) => {
     try {
         console.log("executeBatchMint", value);
-        const result = await writeContract(config, {
+        const result = await writeContract(wagmiAdapter.wagmiConfig, {
             abi,
             address: collectionAddress,
             functionName: 'batchMint',
