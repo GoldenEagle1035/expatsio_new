@@ -1,20 +1,35 @@
 'use client';
 
-import { http, createStorage, cookieStorage } from 'wagmi'
-import { mainnet, bscTestnet } from 'wagmi/chains'
-import { Chain, getDefaultConfig } from '@rainbow-me/rainbowkit'
+import { createAppKit } from '@reown/appkit/react'
+import { mainnet, bscTestnet } from '@reown/appkit/networks'
+import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
+
+import { QueryClient } from '@tanstack/react-query'
 
 const projectId = "97b2da2ba373a81bf789edbfc4d7bb18";
 
-const supportedChains: Chain[] = [bscTestnet];
+const queryClient = new QueryClient()
 
-export const config = getDefaultConfig({
-   appName: "Expatsio",
+const metadata = {
+   name: 'Expatsio',
+   description: 'Expatsio',
+   url: 'https://expatsio-nft.vercel.app',
+   icons: ['https://avatars.githubusercontent.com/u/37784886']
+}
+
+const networks = [mainnet, bscTestnet]
+
+export const wagmiAdapter = new WagmiAdapter({
+   networks,
+   projectId
+})
+
+createAppKit({
+   adapters: [wagmiAdapter],
+   networks,
+   metadata,
    projectId,
-   chains: supportedChains as any,
-   ssr: true,
-   storage: createStorage({
-    storage: cookieStorage,
-   }),
-  transports: supportedChains.reduce((obj, chain) => ({ ...obj, [chain.id]: http() }), {})
- });
+   features: {
+      analytics: true,
+   }
+})

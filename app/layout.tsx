@@ -5,7 +5,6 @@ import React from "react";
 import { PreloadResources } from "@/app/preload-resources";
 import Head from "next/head";
 
-import "@rainbow-me/rainbowkit/styles.css";
 import Providers from "./providers";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
